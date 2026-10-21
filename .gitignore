@@ -20,3 +20,6 @@ Thumbs.db
 /cache/
 /tmp/
 /coverage/
+
+# Dump local das cartas coletadas (não publicar dados de terceiros)
+/database/data/
