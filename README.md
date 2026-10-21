@@ -38,6 +38,9 @@ tests/
 3. Construir interface e lógica de aplicação.
 4. Integrar, testar e documentar.
 
+## Primeira demonstração do frontend
+Abra `public/index.html` diretamente no navegador. A busca e os filtros funcionam com dados fictícios, sem servidor. Isso é somente um protótipo: não há autenticação, partidas ou persistência de dados.
+
 Veja [Planejamento](docs/PLANEJAMENTO.md) e [Decisões](docs/DECISOES.md).
 
 ## Execução
