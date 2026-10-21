@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Protótipo inicial do catálogo de cartas Grand Line Archives">
+  <title>Grand Line Archives | Arquivo de Cartas</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#catalogo">Ir para o catálogo</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Grand Line Archives, página inicial"><span class="brand-mark">GL</span><span>GRAND LINE <strong>ARCHIVES</strong></span></a>
+    <nav aria-label="Navegação principal"><a class="active" href="#catalogo">Arquivo</a><a href="#sobre">Sobre</a></nav>
+    <span class="prototype-tag">PROTÓTIPO v0.1</span>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <p class="eyebrow">EXPLORE • COLECIONE • DESCUBRA</p>
+        <h1 id="hero-title">Toda lenda tem <em>uma história.</em></h1>
+        <p>Entre no arquivo e descubra cartas inspiradas nos grandes aventureiros dos mares. Esta é a primeira demonstração visual do nosso card game.</p>
+        <a class="primary-button" href="#catalogo">Explorar cartas <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="hero-symbol" aria-hidden="true">✦</div>
+    </section>
+    <section class="catalog-section" id="catalogo" aria-labelledby="catalog-title">
+      <div class="section-title"><div><p class="eyebrow">O ARQUIVO</p><h2 id="catalog-title">Catálogo de cartas</h2></div><span id="card-count" aria-live="polite"></span></div>
+      <div class="controls">
+        <label class="search-label" for="search">Buscar carta</label>
+        <input id="search" type="search" placeholder="Busque pelo nome ou descrição..." autocomplete="off">
+        <label class="search-label" for="type">Filtrar por categoria</label>
+        <select id="type"><option value="todos">Todas as categorias</option><option value="Capitão">Capitão</option><option value="Espadachim">Espadachim</option><option value="Navegador">Navegador</option><option value="Atirador">Atirador</option></select>
+      </div>
+      <div class="card-grid" id="card-grid" aria-live="polite"></div>
+      <p class="empty-state" id="empty-state" hidden>Nenhuma carta encontrada. Tente outra busca.</p>
+    </section>
+    <section id="sobre" class="about-section"><p class="eyebrow">SOBRE O PROJETO</p><h2>O começo da jornada</h2><p>Grand Line Archives é um projeto acadêmico de Desenvolvimento Web. Esta versão demonstra apenas a interface e filtros locais. Regras de partidas, cadastro e banco de dados ainda serão definidos e implementados.</p></section>
+  </main>
+  <footer><span>Grand Line Archives • Projeto acadêmico não oficial</span><span>Protótipo sem backend</span></footer>
+</body>
+</html>
