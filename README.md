@@ -48,3 +48,7 @@ Ainda não há aplicação executável. As instruções locais serão adicionada
 
 ## Aviso
 Projeto educacional não oficial, sem afiliação com os titulares de One Piece. Evite publicar imagens ou outros ativos protegidos sem autorização.
+
+## Banco de dados e importação OPlayTCG
+O esquema MySQL está em `database/schema.sql`. O coletor e importador estão em `scripts/`.
+Siga o [guia de importação](docs/IMPORTACAO_OPLAYTCG.md) para testar e importar as cartas. Nenhum dado coletado foi enviado ao repositório.
