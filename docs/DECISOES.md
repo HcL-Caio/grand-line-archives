@@ -1,15 +1,17 @@
 # Decisões e pendências
 
-| Tema | Estado | Observação |
+| Tema | Estado | Diretriz |
 | --- | --- | --- |
-| Nome | Definido | Grand Line Archives |
-| Tema | Definido | Card game inspirado em One Piece |
-| Organização | Proposta | MVC |
-| Frontend | Proposto | HTML, CSS e JavaScript |
-| Backend | A confirmar | PHP |
-| Banco de dados | A confirmar | MySQL/MariaDB |
-| Regras das cartas e partidas | Pendente | Validar com o grupo e o enunciado |
-| Identidade visual | Pendente | Projetar interfaces |
-| Instalação local | Pendente | Testar no PC da faculdade |
+| Produto | Definido | Enciclopédia de cartas, **sem partidas/decks** no MVP |
+| Backend | Implementação inicial | PHP MVC, PDO MySQL |
+| Frontend | Implementação inicial | HTML, CSS, JavaScript e Bootstrap |
+| Base de dados | Modelada | Cartas, impressões e entidades editoriais |
+| Importação | Preparada | Coleta opcional sujeita a permissão e validação |
+| Conteúdo narrativo | Modelado | Vínculo à ilustração correta, rascunho até revisão |
+| Autenticação e segurança | Implementação inicial | Sessões, hashes e CSRF; validar com MySQL; falta administração por perfil |
+| Favoritos | Implementação inicial | Adicionar, listar e remover somente do proprietário |
+| Relatórios | Pendente | Distinguir cartas e impressões; exportar PDF |
 
-Não enviar senhas, credenciais, tokens ou arquivos `.env` ao repositório.
+A fonte principal de requisitos é o documento acadêmico Grand Line Archives: Desenvolvimento de uma Enciclopédia sobre One Piece Card Game. A meta inicial é 60 cartas revisadas e 20 ilustrações pesquisadas.
+
+Segredos e arquivos com credenciais não devem ser publicados.
