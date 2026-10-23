@@ -91,6 +91,7 @@ async function showCard(code){
     const source=node("a","source-link","Consultar fonte ↗"),href=safeUrl(c.url_fonte);
     if(href){source.href=href;source.target="_blank";source.rel="noopener noreferrer";}
     target.replaceChildren(title,node("p","detail-subtitle",c.codigo+" • "+(c.tipo||"Sem categoria")),stats,node("h3","","Texto técnico"),node("p","detail-copy",c.efeito||"Efeito não informado."),node("p","detail-copy",c.gatilho?"Trigger: "+c.gatilho:"Trigger não informado."),node("p","editorial-note","Explicação didática e contexto narrativo pendentes de revisão editorial."),node("h3","","Impressões ("+c.impressoes.length+")"),gallery,source);
+    if(window.GLAAuth) window.GLAAuth.mountFavorite(target,c.codigo);
   }catch(error){target.replaceChildren(node("p","",error.message));}
 }
 let timer;
