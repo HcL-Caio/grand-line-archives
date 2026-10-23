@@ -1,26 +1,22 @@
-# Planejamento inicial
+# Planejamento do Grand Line Archives
 
-## Escopo proposto
-Aplicação web acadêmica de card game inspirada no universo de One Piece. As funções abaixo são propostas e devem ser confrontadas com o enunciado da disciplina.
+## 1. Núcleo público (implementação inicial)
+Consulta no MySQL, busca por nome/código, filtros combináveis, paginação, ficha técnica, impressões e glossário publicado. O código foi adicionado em branch separada, mas aguarda testes integrados no XAMPP.
 
-## Módulos candidatos
-- Catálogo e detalhes das cartas.
-- Gerenciamento de coleção.
-- Construção de baralhos.
-- Fluxo de partida com turnos e condição de vitória.
-- Gestão de usuários, caso seja exigida.
+## 2. Conteúdo revisado
+Testar coleta pequena de fonte autorizada, conferir 60 cartas e pelo menos 20 ilustrações, classificar cores, tipos impressos, fontes e referências sem presumir origem de artes.
 
-## Arquitetura MVC
-- **Model:** representa entidades, valida dados e consulta o banco.
-- **View:** exibe páginas e componentes.
-- **Controller:** recebe requisições, coordena regras e seleciona respostas.
+## 3. Contas e favoritos
+Cadastro seguro, login/logout com sessão, hash de senha, permissão por perfil, CSRF para alterações, favorito exclusivo do usuário autenticado.
 
-## Banco de dados
-Entidades preliminares: usuários, cartas, coleção, baralhos, itens de baralho e partidas. Definir as regras e cardinalidades antes de escrever o SQL.
+## 4. Administração
+CRUD e validação de entidades, bloqueio de exclusões com dependências, revisão de explicações e referências narrativas antes da publicação.
 
-## Próxima execução
-1. Revisar os requisitos obrigatórios do trabalho.
-2. Definir MVP e regras do card game.
-3. Planejar esquema relacional e telas.
-4. Implementar primeiro fluxo funcional.
-5. Criar testes e evidências para a apresentação.
+## 5. Relatórios e entrega
+Conferência de contagens distintas de cartas e de impressões, exportação PDF, testes de segurança/integração, layout responsivo, evidências para apresentação e documentação final.
+
+## Fora do escopo
+Simulador de partidas, criação de baralhos, preços em tempo real, comentários públicos e sincronização contínua de catálogos externos.
+
+## Organização
+Controllers recebem requisições; Models consultam o banco com PDO; Views correspondem à interface no diretório public. Regras mais complexas poderão ser movidas a Services.
