@@ -17,8 +17,11 @@ final class AuthController
 
     public function register(array $data): array
     {
-        $name = trim((string) ($data['nome'] ?? ''));
-        $email = mb_strtolower(trim((string) ($data['email'] ?? '')), 'UTF-8');
+        if (!is_string($data['nome'] ?? null) || !is_string($data['email'] ?? null)) {
+            throw new InvalidArgumentException('Nome e e-mail devem ser textos.');
+        }
+        $name = trim($data['nome']);
+        $email = mb_strtolower(trim($data['email']), 'UTF-8');
         $password = $data['senha'] ?? null;
         if (mb_strlen($name, 'UTF-8') < 2 || mb_strlen($name, 'UTF-8') > 120) {
             throw new InvalidArgumentException('Nome deve ter de 2 a 120 caracteres.');
@@ -51,7 +54,10 @@ final class AuthController
 
     public function login(array $data): array
     {
-        $email = mb_strtolower(trim((string) ($data['email'] ?? '')), 'UTF-8');
+        if (!is_string($data['email'] ?? null)) {
+            throw new DomainException('Credenciais inválidas.', 401);
+        }
+        $email = mb_strtolower(trim($data['email']), 'UTF-8');
         $password = $data['senha'] ?? null;
         if (!is_string($password) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
             throw new DomainException('Credenciais inválidas.', 401);

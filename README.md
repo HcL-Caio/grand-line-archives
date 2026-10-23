@@ -9,10 +9,11 @@ PHP 8.1+ (PDO MySQL e mbstring), MySQL 8+/MariaDB, HTML5, CSS, JavaScript e Boot
 - Catálogo de cartas com API PHP MVC: pesquisa por nome/código, filtros por categoria, cor e custo, paginação.
 - Ficha técnica e impressões relacionadas, a partir do banco.
 - Rota de glossário que devolve somente verbetes publicados.
+- Cadastro/login/logout com sessão PHP, senhas com hash e proteção CSRF; favoritos por usuário, com inclusão/remoção.
 - Tabelas editoriais para usuários, favoritos, cores, ilustrações, fontes, referências narrativas e distribuições.
 - Teste isolado de validação dos filtros em tests/filters.php.
 
-**Ainda faltam:** cadastro/login/logout, favoritos operacionais, CRUD administrativo, fluxo de revisão editorial, relatórios/PDF, revisão de cartas reais e integração totalmente testada. O banco começa vazio.
+**Ainda faltam:** CRUD administrativo, controle de publicação editorial, relatórios/PDF, revisão de cartas reais e integração totalmente testada. Login/favoritos foram implementados, mas exigem validação no MySQL e no navegador. O banco começa vazio.
 
 ## Instalação no XAMPP
 
@@ -35,6 +36,14 @@ As configurações padrão são DB_HOST=127.0.0.1, DB_PORT=3306, DB_NAME=grand_l
 - GET /api/cartas?busca=Luffy&tipo=Leader&cor=Red&custo=5&pagina=1&limite=12: catálogo paginado, limites de 1 a 60 itens.
 - GET /api/cartas/OP01-001: detalhes da carta e impressões.
 - GET /api/glossario?busca=Counter: termos publicados.
+- GET /api/sessao: usuário autenticado (ou nulo) e token CSRF.
+- POST /api/registrar: JSON com nome, email e senha (mínimo 10 bytes); autentica após criar.
+- POST /api/login: JSON com email e senha.
+- POST /api/logout: encerra sessão.
+- GET /api/favoritos: lista apenas do usuário autenticado.
+- POST /api/favoritos: JSON com codigo da carta.
+- DELETE /api/favoritos/OP01-001: remove favorito do usuário autenticado.
+- POST/DELETE exigem cabeçalho X-CSRF-Token retornado por /api/sessao e cookie da mesma sessão.
 
 As cores são filtradas por cartas e cores associadas nas tabelas normalizadas. O coletor atual não popula cores automaticamente, então o filtro de cor retornará vazio até a classificação ser preenchida e revisada.
 
@@ -45,9 +54,11 @@ Consulte docs/IMPORTACAO_OPLAYTCG.md. Nenhum dado coletado foi versionado, e a c
 ## Testes
 
     php tests/filters.php
+    php tests/session.php
     php -l public/index.php
     php -l app/Models/Card.php
     node --check public/assets/js/app.js
+    node --check public/assets/js/auth.js
 
 Também é necessário testar no navegador com MySQL real, conferir erros de conexão, busca, filtros simultâneos, paginação, URLs de imagens e responsividade. Veja docs/STATUS_MVP.md.
 

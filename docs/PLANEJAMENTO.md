@@ -6,8 +6,8 @@ Consulta no MySQL, busca por nome/código, filtros combináveis, paginação, fi
 ## 2. Conteúdo revisado
 Testar coleta pequena de fonte autorizada, conferir 60 cartas e pelo menos 20 ilustrações, classificar cores, tipos impressos, fontes e referências sem presumir origem de artes.
 
-## 3. Contas e favoritos
-Cadastro seguro, login/logout com sessão, hash de senha, permissão por perfil, CSRF para alterações, favorito exclusivo do usuário autenticado.
+## 3. Contas e favoritos (implementação inicial)
+Cadastro, login/logout com sessão, hash de senha, token CSRF e favorito vinculado ao usuário foram enviados à branch. Ainda é preciso testar com banco real, completar endurecimento de autenticação e criar operações administrativas verificando o perfil.
 
 ## 4. Administração
 CRUD e validação de entidades, bloqueio de exclusões com dependências, revisão de explicações e referências narrativas antes da publicação.

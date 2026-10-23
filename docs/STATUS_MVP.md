@@ -6,14 +6,15 @@
 - Interface web Bootstrap/CSS e JavaScript que lê resultados da API.
 - Glossário somente de termos publicados.
 - Expansão relacional de usuários, favoritos, cores, artes, referências, fontes, produtos e distribuição.
-- Testes unitários de validação de parâmetros e configuração inicial para CI.
+- Cadastro/login/logout com sessão PHP, hash, CSRF e favoritos exclusivos do usuário.
+- Testes unitários de validação de parâmetros e sessão, com CI.
 
 ## Limitações
 - Testes com MySQL e navegador no XAMPP ainda não foram executados neste ambiente; não tratar a integração como homologada.
 - A importação real das cartas ainda não ocorreu. Banco vazio é normal após criar as tabelas.
 - O extrator anterior não fornece cores de forma confiável; revisar e cadastrar o vínculo de cores antes de exigir resultados nesse filtro.
 - Definições de glossário e referências narrativas só aparecem após revisão/publicação.
-- Autenticação, CRUD, favoritos funcionais, CSRF e PDF ainda dependem de desenvolvimento posterior.
+- O fluxo de autenticação/favoritos foi programado, mas carece de teste integrado. CRUD administrativo, revisão editorial e PDF ainda dependem de desenvolvimento posterior.
 - Links de imagens dependem de disponibilidade e permissões da fonte.
 
 ## Critérios de teste local
@@ -23,4 +24,5 @@
 4. GET /api/cartas/INEXISTENTE deve retornar 404 JSON.
 5. Importar amostra autorizada, conferir detalhes e impressões.
 6. Validar filtros combinados e paginação, inclusive custo zero.
-7. Conferir layout em celular, imagens ausentes e erros de banco.
+7. Testar cadastro, login inválido, logout, CSRF ausente, favoritos isolados entre duas contas.
+8. Conferir layout em celular, imagens ausentes e erros de banco.

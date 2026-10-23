@@ -8,7 +8,8 @@
 | Base de dados | Modelada | Cartas, impressões e entidades editoriais |
 | Importação | Preparada | Coleta opcional sujeita a permissão e validação |
 | Conteúdo narrativo | Modelado | Vínculo à ilustração correta, rascunho até revisão |
-| Autenticação e segurança | Pendente | Sessões, hashes, CSRF, autorizações |
+| Autenticação e segurança | Implementação inicial | Sessões, hashes e CSRF; validar com MySQL; falta administração por perfil |
+| Favoritos | Implementação inicial | Adicionar, listar e remover somente do proprietário |
 | Relatórios | Pendente | Distinguir cartas e impressões; exportar PDF |
 
 A fonte principal de requisitos é o documento acadêmico Grand Line Archives: Desenvolvimento de uma Enciclopédia sobre One Piece Card Game. A meta inicial é 60 cartas revisadas e 20 ilustrações pesquisadas.
